@@ -12,6 +12,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('buku/create', [BukuController::class, 'create'])->name('buku.create');
     Route::post('buku', [BukuController::class, 'store'])->name('buku.store');
     Route::get('{id}/edit', [BukuController::class, 'edit'])->name('buku.edit');
+    Route::get('{id}/detail', [BukuController::class, 'detail'])->name('buku.detail');
     Route::put('buku/{id}', [BukuController::class, 'update'])->name('buku.update');
     Route::delete('buku/{id}', [BukuController::class, 'destroy'])->name('buku.destroy');
 });

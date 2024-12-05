@@ -61,6 +61,8 @@
                                 <button type="submit" class="btn btn-danger btn-sm"
                                     onclick="return confirm('Yakin ingin menghapus buku ini?')">Delete</button>
                             </form>
+
+                            <a href="{{ route('admin.buku.detail', $d->id_buku) }}" class="btn btn-primary btn-sm">Detail</a>
                         </td>
                     </tr>
                 @endforeach

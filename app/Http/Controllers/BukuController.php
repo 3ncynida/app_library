@@ -35,7 +35,7 @@ class BukuController extends Controller
             'penerbit' => 'required|max:50',
             'tahun_terbit' => 'required|date',
             'stok' => 'required|integer|min:1',
-            'detail' => 'required|string|max:500', // Validasi untuk kolom detail
+            'detail' => 'required|string', // Validasi untuk kolom detail
         ]);
     
         // Simpan data ke database
@@ -54,9 +54,10 @@ class BukuController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function detail(string $id)
     {
-        //
+        $detailbuku = Buku::findOrFail($id);
+        return view('admin.buku.detail', compact('detailbuku'));
     }
 
     /**
