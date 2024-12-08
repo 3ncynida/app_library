@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('penerbit', 50);
             $table->date('tahun_terbit');
             $table->integer('stok');
-            $table->text('detail')->nullable()->after('stok');
+            $table->text('detail')->nullable();
             $table->timestamps();
         });
 
@@ -49,8 +49,5 @@ return new class extends Migration
         Schema::dropIfExists('buku_penulis');
         Schema::dropIfExists('penulis');
         Schema::dropIfExists('buku');
-        Schema::table('buku', function (Blueprint $table) {
-            $table->dropColumn('detail'); // Hapus kolom jika di-rollback
-        });
     }
 };
